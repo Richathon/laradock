@@ -1,9 +1,12 @@
-[program:laravel-worker]
+[program:laravel-scheduler]
 process_name=%(program_name)s_%(process_num)02d
-command=php /var/www/artisan horizon
+command=php /var/www/artisan schedule:run
 autostart=true
 autorestart=true
 numprocs=1
 user=laradock
 redirect_stderr=true
-stdout_logfile=/var/www/storage/logs/horizon.log
+stdout_logfile=/var/www/storage/logs/scheduler.log
+
+
+
